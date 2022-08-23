@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, createContext } from "react";
 import { Header } from "../Header";
 import { Resume } from "../Resume";
-import { Global } from "./style";
 import { Form } from "../form";
+import { Global } from '../../style'
+
+export const ThemeContext = createContext(null);
 
 const App= () => {
 
@@ -44,18 +46,26 @@ const App= () => {
 
     }
 
+    const [theme, setTheme] = useState("light");
+
+    const toggleTheme = () => {
+      setTheme((curr) => (curr === "light" ? "dark" : "light"));
+    }
+
 
   return (
 
     <>
-        <Header/>
-        <Resume income={income} expense={expense} total={total}/>
-        <Form 
-          handleAdd={handleAdd} 
-          transactionsList={transactionsList} 
-          setTrasactionsList={setTrasactionsList}
-        />
-      <Global/>
+      <ThemeContext.Provider value={{theme, setTheme} }>
+          <Header/>
+          <Resume income={income} expense={expense} total={total}/>
+          <Form 
+            handleAdd={handleAdd} 
+            transactionsList={transactionsList} 
+            setTrasactionsList={setTrasactionsList}
+          />
+          <Global id={theme}/>
+      </ThemeContext.Provider>
     </>
 
 

@@ -14,16 +14,16 @@ const Grid = ({ itens, setItens }) => {
     <C.GridConteiner>
       <C.Thead>
         <C.Tr>
-          <C.Th width={40}>Descrição</C.Th>
-          <C.Th width={40}>Valor</C.Th>
+          <C.Th width={40}>Description</C.Th>
+          <C.Th width={40}>Value</C.Th>
           <C.Th width={10} alignCenter>
-            Tipo
+            Type
           </C.Th>
           <C.Th width={10}></C.Th>
         </C.Tr>
       </C.Thead>
       <C.Tbody>
-        {itens?.map((item, index) => (
+      {itens?.map((item, index) => (
           <GridItem key={index} item={item} onDelete={onDelete} />
         ))}
       </C.Tbody>

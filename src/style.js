@@ -1,4 +1,4 @@
-import {createGlobalStyle} from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 export const Global = createGlobalStyle`
 
@@ -12,5 +12,15 @@ export const Global = createGlobalStyle`
         flex-direction: column;
         font-family: 'Poppins', sans-serif;
         background-color: #F2F2F2;
+    }
+
+    #light {
+        background-color: #F2F2F2;
+        color: #000;
+    }
+
+    #dark {
+        background-color:  #080705;
+        color: #fff;
     }
 `;

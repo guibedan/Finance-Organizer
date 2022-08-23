@@ -10,7 +10,7 @@ export const FormConteiner = styled.div `
     box-shadow: 0px 0px 3px #ccc;
     display: flex;
     justify-content: space-around;
-    padding: 15px 0;
+    padding: 15px 0px;
     gap: 10px;
 
     @media (max-width: 750px) {
